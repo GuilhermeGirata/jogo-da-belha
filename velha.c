@@ -4,13 +4,13 @@
 #include <locale.h>
 
 
-typedef struct Jogador { //definiÁ„o da struct
-	char nome[20]; //definiÁ„o membros da struct
+typedef struct Jogador { //defini√ß√£o da struct
+	char nome[20]; //defini√ß√£o membros da struct
 	char simbolo;
 } Jogador; //apelido da struct
 
-typedef struct Velha { //definiÁ„o da struct
-	int partida; //definiÁ„o membros da struct
+typedef struct Velha { //defini√ß√£o da struct
+	int partida; //defini√ß√£o membros da struct
 	char jogo_velha[3][3];
 	char resultado;
 } Partida; //apelido da struct
@@ -34,11 +34,11 @@ int main() {
 
 //-------------------------jogada_usuario---------------------------------
 
-/* preenche a posiÁ„o informada pelos par‚metros com 'X' ou 'O' passados
-   atravÈs de 'jog', retornando:
-        0 ñ se a jogada È v·lida
-        1 ñ se a posiÁ„o informada È inv·lida
-        2 ñ se a posiÁ„o informada j· est· preenchida                   */
+/* preenche a posi√ß√£o informada pelos par√¢metros com 'X' ou 'O' passados
+   atrav√©s de 'jog', retornando:
+        0 ‚Äì se a jogada √© v√°lida
+        1 ‚Äì se a posi√ß√£o informada √© inv√°lida
+        2 ‚Äì se a posi√ß√£o informada j√° est√° preenchida                   */
 
 int jogada_usuario(int lin, int col, char jog) {
 	if (partida.jogo_velha[lin][col] == 'X' || partida.jogo_velha[lin][col] == 'O')
@@ -54,7 +54,7 @@ int jogada_usuario(int lin, int col, char jog) {
 //-------------------------jogada_computador---------------------------------
 
 /* realiza a jogada do computador, definindo 'nivel' para a dificuldade da jogada
-   e se o computador ser· 'X' ou 'O' de acordo com o par‚metro 'jog' definido
+   e se o computador ser√° 'X' ou 'O' de acordo com o par√¢metro 'jog' definido
    pelo jogador                                                                   */
 
 void jogada_computador(char jog, int nivel) {
@@ -82,9 +82,9 @@ void jogada_computador(char jog, int nivel) {
 
 //-------------------------menu---------------------------------
 
-/* retorna 1 se o usu·rio quiser jogar contra o computador,
+/* retorna 1 se o usu√°rio quiser jogar contra o computador,
    escolhendo sua dificuldade, ou 2 quando quiser jogar
-   contra outro usu·rio                                    */
+   contra outro usu√°rio                                    */
 
 int menu() {
 	int opcao;
@@ -92,10 +92,10 @@ int menu() {
 	printf("-------------------------------------------------------\n");
 	printf("----------           JOGO DA VELHA           ----------\n");
 	printf("-------------------------------------------------------\n\n");
-	printf("O jogo da velha È um jogo de estratÈgia bem simples de ser jogado.\n");
-    printf("Nele È necess·rio colocar trÍs sÌmbolos iguais em sequÍncia para ganhar.\n\n");
+	printf("O jogo da velha √© um jogo de estrat√©gia bem simples de ser jogado.\n");
+    printf("Nele √© necess√°rio colocar tr√™s s√≠mbolos iguais em sequ√™ncia para ganhar.\n\n");
 	printf("1 -> JOGAR COM UM AMIGO\n");
-	printf("2 -> JOGAR COM A M¡QUINA\n");
+	printf("2 -> JOGAR COM A M√ÅQUINA\n");
 	while (1) {
 		scanf("%d", &opcao);
 		if (opcao == 1) {
@@ -107,9 +107,9 @@ int menu() {
 			printf("                  ESCOLHA A DIFICULDADE\n");
 			printf(
 					"--------------------------------------------------------\n");
-			printf("1 -> F¡CIL\n");
-			printf("2 -> M…DIO\n");
-			printf("3 -> DIFÕCIL\n");
+			printf("1 -> F√ÅCIL\n");
+			printf("2 -> M√âDIO\n");
+			printf("3 -> DIF√çCIL\n");
 			scanf("%d", &nivel);
 			return 2;
 			break;
@@ -119,10 +119,10 @@ int menu() {
 
 //-------------------------escolha_simb---------------------------------
 
-/* define quem È o jogador 'X' e o 'O' de acordo com a entrada do jogador */
+/* define quem √© o jogador 'X' e o 'O' de acordo com a entrada do jogador */
 //usar x e o minusculos para escolher!
 void escolha_simb(char *jog1, char *jog2) {
-	printf("\nINSIRA QUAL SÕMBOLO O JOGADOR 1 SER¡ (X ou O)\n");
+	printf("\nINSIRA QUAL S√çMBOLO O JOGADOR 1 SER√Å (X ou O)\n");
 	do {
 		scanf("%c", &*jog1);
 		if (*jog1 == 'x') {
@@ -161,7 +161,7 @@ void inicializa_velha(int num_partida, char jogo_velha[3][3]) {
 
 //-------------------------verifica_ganhador---------------------------------
 
-/* retorna 1 se o jogador ganhou e 0 caso contr·rio */
+/* retorna 1 se o jogador ganhou e 0 caso contr√°rio */
 
 int verifica_ganhador(char jog) {
 	int x, preenchidos;
@@ -361,7 +361,7 @@ void medio(char jog, char jog2) {
 void dificil(char jog, char jog2) {
 	int fim = 1;
 
-	while (fim) {//Primeira jogada, se possivel sempre È o meio
+	while (fim) {//Primeira jogada, se possivel sempre √© o meio
 		if (partida.jogo_velha[1][1] == '5') {
 			partida.jogo_velha[1][1] = jog;
 			break;
@@ -385,7 +385,7 @@ void dificil(char jog, char jog2) {
 
 //---------------------fim dificuldade---------------------------------
 
-//---------------------configuraÁ„o partida----------------------------
+//---------------------configura√ß√£o partida----------------------------
 
 int config(Jogador *jogador1, Jogador *jogador2) {
 	int option;
@@ -441,9 +441,9 @@ int inicia_jogo() {
 				int result;
 				result = jogada_usuario(x, y, temp);
 				if (result == 1)
-					printf("ESPA«O J¡ PREENCHIDO\n");
+					printf("ESPA√áO J√Å PREENCHIDO\n");
 				else if (result == 2)
-					printf("JOGADA INV¡LIDA\n");
+					printf("JOGADA INV√ÅLIDA\n");
 				else {
 					partida.jogo_velha[x][y] = turno_jogador;
 					break;
@@ -652,7 +652,7 @@ void menu_pos_partida() {
 				printf(
 						"\n---------------------------------------------------\n");
 			} else
-				printf("Partida n„o encontrada nos registros\n");
+				printf("Partida n√£o encontrada nos registros\n");
 		}
 		if (opcao == 0)
 			break;
