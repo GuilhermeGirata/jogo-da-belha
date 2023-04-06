@@ -1,2 +1,2 @@
-# Jogo da Forca
-Jogo da Forca desenvolvido na disciplina de Linguagem de Programação - UFPR
+# Jogo da Velha
+Jogo da Velha desenvolvido na disciplina de Linguagem de Programação - UFPR
